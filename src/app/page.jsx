@@ -3,6 +3,7 @@ import { prisma } from '@/db'
 import Todoitem from "@/components/Todo";
 import CustomMenu from "@/components/CustomMenu";
 
+
 function getTodos () {
     return prisma.Todo.findMany()
 }
@@ -18,7 +19,7 @@ async function toggleTodo (id, completed) {
 
 async function deleteTodo (id) {   
     "use server"
-
+    
     await prisma.Todo.delete({  
         where: { id },  
     })
@@ -49,3 +50,4 @@ const Todo = async() => {
 };
 
 export default Todo;
+
