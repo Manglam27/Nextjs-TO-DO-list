@@ -48,9 +48,8 @@ const CustomMenu = ({deleteTodo}) => {
     
         if (event.target.innerHTML === 'Delete') {
             console.log('Component ID:', forAttributeValue);
-            if(forAttributeValue === null){ return; }
-            deleteTodo(forAttributeValue);
-            
+            if(forAttributeValue != null){deleteTodo(forAttributeValue); }
+            hideMenu();    
         }
         hideMenu();
     };
